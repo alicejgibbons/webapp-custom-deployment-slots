@@ -100,7 +100,7 @@
     },
     "slots" : {
       "type" : "array",
-      "value": "[concat(variables('webAppPortalName'), '/', parameters('environments')[copyIndex()])]"
+      "value": "[parameters('environments')]"
     }
   }
 }
