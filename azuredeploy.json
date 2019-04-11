@@ -92,7 +92,7 @@
   "outputs": {
     "aspName" : {
       "type" : "string",
-      "value": "[parameters('aspName')]",
+      "value": "[parameters('aspName')]"
     },
     "webAppName" : {
       "type" : "string",
