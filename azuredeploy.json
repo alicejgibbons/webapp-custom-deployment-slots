@@ -88,5 +88,19 @@
         "count": "[length(parameters('environments'))]"
       }
     }
-  ]
+  ],
+  "outputs": {
+    "aspName" : {
+      "type" : "string",
+      "value": "[parameters('aspName')]",
+    },
+    "webAppName" : {
+      "type" : "string",
+      "value": "[parameters('webAppName')]"
+    },
+    "slots" : {
+      "type" : "array",
+      "value": "[concat(variables('webAppPortalName'), '/', parameters('environments')[copyIndex()])]"
+    }
+  }
 }
