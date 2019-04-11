@@ -2,19 +2,17 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "baseResourceName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the resource"
-      },
-      "maxLength": 15
+    "aspName": {
+      "type": "string"
+    },
+    "webAppName": {
+      "type": "string"
     },
     "environments": {
       "defaultValue": [
-        "Dev",
+        "DEV",
         "QA",
-        "UAT",
-        "Preview"
+        "UAT"
       ],
       "type": "array",
       "metadata": {
@@ -31,9 +29,9 @@
     }
   },
   "variables": {
-    "standardPlanMaxAdditionalSlots": 4,
-    "webAppPortalName": "[concat(parameters('baseResourceName'), 'Portal')]",
-    "appServicePlanName": "[concat('AppServicePlan-', parameters('baseResourceName'))]"
+    "standardPlanMaxAdditionalSlots": 3,
+    "webAppPortalName": "[parameters('webAppName')]",
+    "appServicePlanName": "[parameters('aspName')]"
   },
   "resources": [
     {
